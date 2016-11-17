@@ -13,8 +13,8 @@
     "build": "npm run clean && cd src && webpack -p --config webpack.config.product.js",
     "dev": "npm run clean && cd src && webpack-dev-server --inline --progress --colors --port 8090 --config webpack.config.development.js"
   },
-  "license": "MIT",
   "dependencies": {
+    "antd": "^2.4.2",
     "react": "^15.4.0",
     "react-dom": "^15.3.2",
     "react-router": "^3.0.0"

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import RootView from './views/RootView';
-import '../styles/index';
 
-console.log(RootView);
-//render(<Router/>, document.getElementById('app'));
+//and desing:
+import 'antd/dist/antd.css';
+import '../styles/app';
+
 ReactDom.render(
     <RootView />,
     document.getElementById('index-app')

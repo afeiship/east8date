@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "webkit-sass-mixins": "afeiship/webkit-sass-mixins",
-    "webkit-sassui-layout-justify": "afeiship/webkit-sassui-layout-justify"
+    "webkit-sassui-layout-justify": "afeiship/webkit-sassui-layout-justify",
+    "webkit-sass-reset": "afeiship/webkit-sass-reset"
   }
 }
