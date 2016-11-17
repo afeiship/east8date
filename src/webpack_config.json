@@ -1,0 +1,5 @@
+{
+  "venderName": "scripts/vendor",
+  "devPort": 8082,
+  "appEntries": "scripts/index.js"
+}
