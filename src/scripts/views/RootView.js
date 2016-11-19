@@ -8,7 +8,7 @@ export default class RootView extends React.Component{
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={HomeApp}/>
+        <Route path="/home" component={HomeApp}/>
         <Route path="/list" component={ListApp}/>
         <Route path="/detail" component={DetailApp}/>
         <Route path="/login" component={LoginApp}/>

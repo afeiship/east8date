@@ -1,5 +1,23 @@
 .login-view{
   height:100%;
-  background: url(#{$img-url}/login_bg.png) no-repeat center center;
+  background: url(#{$img-url}/bg6.jpg) no-repeat center center;
   background-size: cover;
+
+  >.bd{
+    background: rgba(#000,0.8);
+    color:#fff;
+    position: absolute;
+    width:400px;
+    padding:30px 30px 0;
+    border-radius: 10px;
+    right:20%;
+    top:30%;
+
+    >.hd{
+      @include hlh(40px);
+      font-size: 20px;
+      font-weight: bold;
+      color:#FFF;
+    }
+  }
 }
