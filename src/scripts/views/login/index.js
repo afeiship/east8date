@@ -7,8 +7,10 @@ export default class LoginApp extends React.Component {
   render() {
     return (
       <div className="login-view">
-        <Form className="bd">
-          <header className="hd">Login</header>
+        <Form className="bd" mode="inline">
+          <header className="hd">
+            <span>Login</span>
+          </header>
           <Form.Item>
             <Input size="large" addonBefore={<Icon type="user" />} placeholder="Username" />
           </Form.Item>
@@ -16,7 +18,7 @@ export default class LoginApp extends React.Component {
             <Input size="large" addonBefore={<Icon type="lock" />} type="password" placeholder="Password" />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit">Log in</Button>
+            <Button type="primary" htmlType="submit">登录</Button>
           </Form.Item>
         </Form>
       </div>
