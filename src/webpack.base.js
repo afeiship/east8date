@@ -70,7 +70,7 @@
     resolve: {
       extensions: ['', '.js', '.scss'],
       alias: {
-        components: path.join(__dirname, 'components'),
+        components: path.join(__dirname, 'scripts/components'),
         scripts: path.join(__dirname, 'scripts'),
         styles: path.join(__dirname, 'styles'),
         bower_components: path.join(__dirname, 'bower_components'),

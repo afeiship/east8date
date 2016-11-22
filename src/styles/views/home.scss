@@ -1,0 +1,13 @@
+.home-view{
+  &,
+  >.left,
+  >.right{
+    height:100%;
+  }
+  >.left{
+    background: #FFF;
+  }
+  >.right{
+    background: gray;
+  }
+}

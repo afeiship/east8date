@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+
+import { Row, Col,Card } from 'antd';
+import LeftMenu from 'components/LeftMenu';
+
 export default class HomeApp extends React.Component {
   render() {
-    var spanList=[];
-    var space=' ';
-    for (var i = 0; i < 3; i++) {
-      spanList.push(<span key={i}>Hello index view{i}~~~</span>);
-      spanList.push(space);
-    }
-
-    console.log(spanList);
     return (
-      <div className="test-justify">
-        {spanList}
-      </div>
+      <Row className="home-view">
+          <Col className="left" span={6}>
+            <Card title="管理员信息" bordered=false}>
+              <p>Card content</p>
+              <p>Card content</p>
+              <p>Card content</p>
+            </Card>
+            <LeftMenu />
+          </Col>
+          <Col className="right" span={18}>col-18</Col>
+      </Row>
     )
   }
 }
