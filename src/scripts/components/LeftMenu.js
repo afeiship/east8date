@@ -6,17 +6,10 @@ const SubMenu = Menu.SubMenu;
 export default class LeftMenu extends React.Component {
   render() {
     return (
-      <Menu
-        className="left-menu"
-        mode="inline"
-      >
-        <SubMenu key="sub1" title={<span><Icon type="mail" /><span>用户管理</span></span>}>
-          <Menu.Item key="1">列表</Menu.Item>
-        </SubMenu>
-        <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>产品管理</span></span>}>
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-        </SubMenu>
+      <Menu className="left-menu" mode="inline">
+        <Menu.Item key="1">用户管理</Menu.Item>
+        <Menu.Item key="2">商品管理</Menu.Item>
+        <Menu.Item key="3">系统设置</Menu.Item>
         <SubMenu key="sub4" title={<span><Icon type="setting" /><span>文章管理</span></span>}>
           <Menu.Item key="9">Option 9</Menu.Item>
           <Menu.Item key="10">Option 10</Menu.Item>

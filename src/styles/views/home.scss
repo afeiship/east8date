@@ -1,13 +1,35 @@
-.home-view{
-  &,
-  >.left,
-  >.right{
-    height:100%;
-  }
-  >.left{
+.home-view {
+  background: #ececec;
+  > .hd {
     background: #FFF;
+    height: 80px;
+    padding:0 10%;
   }
-  >.right{
-    background: gray;
+
+  > .bd {
+    width:80%;
+    height:800px;
+    margin:20px auto;
+    padding:20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #FFF;
+    >.left,
+    >.right{
+    }
+    > .left {
+      >.ant-menu-root{
+        border: none;
+      }
+    }
+
+    > .right {
+      border-left: 1px solid #e9e9e9;
+    }
+  }
+
+  > .ft {
+    background: #FFF;
+    height:100px;
   }
 }

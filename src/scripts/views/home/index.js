@@ -7,17 +7,20 @@ import LeftMenu from 'components/LeftMenu';
 export default class HomeApp extends React.Component {
   render() {
     return (
-      <Row className="home-view">
-          <Col className="left" span={6}>
-            <Card title="管理员信息" bordered=false}>
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-            </Card>
-            <LeftMenu />
-          </Col>
-          <Col className="right" span={18}>col-18</Col>
-      </Row>
+      <div className="home-view">
+        <Row className="hd" type="flex" align="middle">
+          <Col span={24}>Header</Col>
+        </Row>
+        <Row type="flex" className="bd">
+            <Col className="left" span={6}>
+              <LeftMenu />
+            </Col>
+            <Col className="right" span={18}>col-18</Col>
+        </Row>
+        <footer className="ft">
+          Footer
+        </footer>
+      </div>
     )
   }
 }
