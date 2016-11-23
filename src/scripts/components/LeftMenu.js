@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDom from 'react-dom';
 import { Menu, Icon } from 'antd';
+import {Link} from 'react-router';
 const SubMenu = Menu.SubMenu;
 
 export default class LeftMenu extends React.Component {
   render() {
     return (
       <Menu className="left-menu" mode="inline">
-        <Menu.Item key="1">用户管理</Menu.Item>
-        <Menu.Item key="2">商品管理</Menu.Item>
-        <Menu.Item key="3">系统设置</Menu.Item>
-        <SubMenu key="sub4" title={<span><Icon type="setting" /><span>文章管理</span></span>}>
-          <Menu.Item key="9">Option 9</Menu.Item>
-          <Menu.Item key="10">Option 10</Menu.Item>
-          <Menu.Item key="11">Option 11</Menu.Item>
-          <Menu.Item key="12">Option 12</Menu.Item>
-        </SubMenu>
+        <Menu.Item key="1">
+          <Link to='/user' activeClassName="ant-menu-item-selected">用户管理</Link>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Link to='/article' activeClassName="ant-menu-item-selected">文章管理</Link>
+        </Menu.Item>
+        <Menu.Item key="3">
+          <Link to='/system' activeClassName="ant-menu-item-selected">系统设置</Link>
+        </Menu.Item>
       </Menu>
     )
   }

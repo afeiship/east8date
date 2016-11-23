@@ -1,8 +1,5 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import { Form, Icon, Input, Button } from 'antd';
 import { hashHistory } from 'react-router';
-
+import { Form, Icon, Input, Button } from 'antd';
 
 export default class LoginApp extends React.Component {
   state={
@@ -13,14 +10,14 @@ export default class LoginApp extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    hashHistory.push('home');
+    hashHistory.push('/');
   }
 
   handleChange(field,ev){
     this.state[field]=ev.target.value;
     this.setState(this.state);
   }
-  
+
   render() {
     return (
       <div className="login-view">

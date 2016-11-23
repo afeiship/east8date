@@ -4,6 +4,51 @@ $img-url:'../assets/images';
 
 @import "../bower_components/webkit-sassui-layout-justify/dist/webkit-sassui-justify.scss";
 @import "../bower_components/webkit-sass-reset/dist/webkit-sass-reset.scss";
-@import "./base";
 @import "./views/login";
-@import "./views/home";
+
+html,body{
+  height:100%;
+}
+body{
+  font-size: $body-font-size;
+}
+#index-app{
+  height:100%;
+}
+
+.app-view {
+  background: #ececec;
+  > .hd {
+    background: #FFF;
+    height: 80px;
+    padding:0 10%;
+  }
+
+  > .bd {
+    width:80%;
+    height:800px;
+    margin:20px auto;
+    padding:20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #FFF;
+    >.left,
+    >.right{
+    }
+    > .left {
+      >.ant-menu-root{
+        border: none;
+      }
+    }
+
+    > .right {
+      border-left: 1px solid #e9e9e9;
+      padding:0 10px;
+    }
+  }
+
+  > .ft {
+    background: #FFF;
+    height:100px;
+  }
+}
