@@ -4,6 +4,7 @@ $img-url:'../assets/images';
 
 @import "../bower_components/webkit-sassui-layout-justify/dist/webkit-sassui-justify.scss";
 @import "../bower_components/webkit-sass-reset/dist/webkit-sass-reset.scss";
+@import "./components/left-menu";
 @import "./views/login";
 
 html,body{

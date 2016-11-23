@@ -1,4 +1,4 @@
-export default class Dashbard extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <div className="dashbard-view">

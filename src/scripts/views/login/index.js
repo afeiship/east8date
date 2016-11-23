@@ -1,7 +1,7 @@
 import { hashHistory } from 'react-router';
 import { Form, Icon, Input, Button } from 'antd';
 
-export default class LoginApp extends React.Component {
+export default class extends React.Component {
   state={
     username:'',
     password:''

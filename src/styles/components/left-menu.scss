@@ -1,0 +1,20 @@
+.left-menu{
+  margin-right: -1px;
+  >a{
+    color:#333;
+    display: block;
+    font-size: 13px;
+    padding-left: 20px;
+    border-right:3px solid transparent;
+    @include hlh(50px);
+
+    >i{
+      margin-right: 5px;
+    }
+
+    &.active{
+      background: #eaf8fe;
+      border-right-color: #2db7f5;;
+    }
+  }
+}
