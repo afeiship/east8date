@@ -3,7 +3,7 @@ import LeftMenu from 'components/LeftMenu';
 import { Link } from 'react-router';
 
 const imgLogo=require('images/ant-logo.svg');
-export default class App extends React.Component{
+export default class extends React.Component{
   render() {
     return (
       <div className="app-view">
