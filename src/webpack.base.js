@@ -70,6 +70,7 @@
     resolve: {
       extensions: ['', '.js', '.scss'],
       alias: {
+        services: path.join(__dirname, 'scripts/services'),
         views: path.join(__dirname, 'scripts/views'),
         components: path.join(__dirname, 'scripts/components'),
         scripts: path.join(__dirname, 'scripts'),

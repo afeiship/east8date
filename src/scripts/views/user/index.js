@@ -1,18 +1,16 @@
 import { Link } from 'react-router';
-import 'whatwg-fetch';
+import http from 'services/http';
 
 export default class extends React.Component {
   fetchData() {
-    fetch('http://www.fakee.com/index.php/user?id=1', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'x-www-form-urlencoded'
+    return http.GET('/user',{
+      data:{
+        id:1
+      },
+      success:function(inResp) {
+        console.log(inResp);
       }
-    }).then(function(data) {
-      console.log('request succeeded with JSON response', data)
-    }).catch(function(error) {
-      console.log('request failed', error)
-    });
+    })
   }
   render() {
     this.fetchData();
