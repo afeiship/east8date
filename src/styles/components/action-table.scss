@@ -1,0 +1,16 @@
+.action-table{
+  width:100%;
+  td{
+    width: 1%;
+    padding:10px 20px;
+    border:1px solid #F2f2f2;
+  }
+  thead{
+    td{
+      background: #EEE;
+    }
+  }
+  tbody{
+    background: #FFF;
+  }
+}

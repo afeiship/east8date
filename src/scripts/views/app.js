@@ -16,16 +16,16 @@ export default class extends React.Component{
           </Col>
         </Row>
         <Row type="flex" className="bd">
-            <Col className="left" span={6}>
+            <Col className="left" span={4}>
               <LeftMenu />
             </Col>
-            <Col className="right" span={18}>
+            <Col className="right" span={20}>
                {this.props.children}
             </Col>
         </Row>
-        <footer className="ft">
-          Footer
-        </footer>
+        <Row className="ft" type="flex" justify="center" align="middle">
+          <Col>苏ICP备13050453号-4 XXX公司，版权所有©2014 - 2016</Col>
+        </Row>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 export default class extends React.Component {
   render() {
     return (
-      <div className="system-view">
+      <div className="option-view">
         System info view.
       </div>
     )
