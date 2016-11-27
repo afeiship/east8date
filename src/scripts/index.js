@@ -19,7 +19,7 @@ ReactDom.render(
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Dashbard}/>
-        <Route path="/user(/:page)" component={User}/>
+        <Route path="/user/(:page)" component={User}/>
         <Route path="/article" component={Article}/>
         <Route path="/option" component={Option}/>
         <Route path="/qa" component={Qa}/>
