@@ -27,41 +27,7 @@ const columns = [{
 
 
 export default class extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  state={
-    total:0,
-    items:[],
-    defaultPageSize:10,
-    defaultCurrent:+this.props.params['page'] || 1,
-    onChange: (current) => {
-      this.fetchData(current);
-      hashHistory.push(`/user/${current}`);
-    }
-  }
-
-  componentDidMount(){
-    this.fetchData(
-      this.props.params['page']
-    );
-  }
-  fetchData(inIndex) {
-    var self=this;
-    return http.GET('/user',{
-      data:{
-        page:inIndex,
-        rows:self.state.pageSize
-      },
-      success:function(inResp) {
-        nx.mix(self.state,inResp.data);
-        self.setState(self.state);
-      }
-    })
-  }
-
   render() {
-    return (<Table columns={columns} dataSource={this.state.items} pagination={this.state} />)
+    return (<div className="user-view">{this.props.children}</div>)
   }
 }
