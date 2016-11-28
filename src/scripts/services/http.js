@@ -6,13 +6,13 @@ export default class Http{
   static GET(inName,inOptions){
     return Http.REQUEST('GET',inName,inOptions);
   }
-  static POST(){
+  static POST(inName,inOptions){
     return Http.REQUEST('POST',inName,inOptions);
   }
-  static PUT(){
+  static PUT(inName,inOptions){
     return Http.REQUEST('PUT',inName,inOptions);
   }
-  static DELETE(){
+  static DELETE(inName,inOptions){
     return Http.REQUEST('DELETE',inName,inOptions);
   }
   static REQUEST(inMethod,inName,inOptions){

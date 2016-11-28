@@ -20,39 +20,45 @@ const columns = [{
   key: 'created_at',
 },{
   title:'操作',
-  dataIndex:'action',
   key:'action',
-  render: ()=><a href="#">编辑</a> | <a href="#">删除</a>
+  render: (text, record) => (
+    <span>
+      <Link to={`/user/edit/${record.user_id}`}>编辑</Link>
+      <span className="ant-divider" />
+      <Link to="#">删除</Link>
+    </span>
+  ),
+  onCellClick:function(record,event){
+    console.log(record,event);
+  }
 }];
 
 
 export default class extends React.Component {
   constructor(props){
     super(props);
+    this.fetchData(
+      +this.props.params['page']
+    );
   }
 
   state={
     total:0,
     items:[],
     defaultPageSize:10,
-    defaultCurrent:+this.props.params['page'] || 1,
+    defaultCurrent:+this.props.params['page'],
     onChange: (current) => {
       this.fetchData(current);
-      hashHistory.push(`/user/${current}`);
+      hashHistory.push(`/user/page/${current}`);
     }
-  }
-
-  componentDidMount(){
-    this.fetchData(
-      this.props.params['page']
-    );
   }
   fetchData(inIndex) {
     var self=this;
     return http.GET('/user',{
       data:{
-        page:inIndex,
-        rows:self.state.pageSize
+        page:inIndex || 1,
+        rows:self.state.pageSize || 10,
+        ts:Date.now()
       },
       success:function(inResp) {
         nx.mix(self.state,inResp.data);

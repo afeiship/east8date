@@ -6,6 +6,7 @@ import Login from 'views/login/index';
 import Dashbard from 'views/dashboard/index';
 import User from 'views/user/index';
 import UserList from 'views/user/list';
+import UserEdit from 'views/user/edit';
 import Article from 'views/article/index';
 import Option from 'views/option/index';
 import Qa from 'views/qa/index';
@@ -22,7 +23,8 @@ ReactDom.render(
         <IndexRoute component={Dashbard}/>
         <Route path="/user" component={User}>
           <IndexRoute component={UserList}/>
-          <Route path="/user/(:page)" component={UserList}/>
+          <Route path="/user/page/(:page)" component={UserList}/>
+          <Route path="/user/edit/:user_id" component={UserEdit}/>
         </Route>
         <Route path="/article" component={Article}/>
         <Route path="/option" component={Option}/>
