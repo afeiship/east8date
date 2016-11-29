@@ -29,9 +29,16 @@ import ImageEdit from 'views/image/edit';
 import ImageAdd from 'views/image/add';
 
 
+//Qa module:
+import Qa from 'views/qa/index';
+import QaList from 'views/qa/list';
+import QaEdit from 'views/qa/edit';
+import QaAdd from 'views/qa/add';
+
+
+
 
 import Article from 'views/article/index';
-import Qa from 'views/qa/index';
 import App from 'views/app';
 
 //and desing:
@@ -71,9 +78,13 @@ ReactDom.render(
           <Route path="/image/add" component={ImageAdd}/>
         </Route>
 
+        <Route path="/qa" component={Qa}>
+          <IndexRoute component={QaList}/>
+          <Route path="/qa/page/(:page)" component={QaList}/>
+          <Route path="/qa/edit/:qa_id" component={QaEdit}/>
+          <Route path="/qa/add" component={QaAdd}/>
+        </Route>
         <Route path="/article" component={Article}/>
-
-        <Route path="/qa" component={Qa}/>
       </Route>
       <Route path="/login" component={Login}/>
     </Router>,
