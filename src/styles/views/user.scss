@@ -1,3 +1,8 @@
 .user-view {
-  background: #F00;
+  &-list{
+    >.hd{
+      @include hlh(40px);
+    }
+    >.bd{}
+  }
 }

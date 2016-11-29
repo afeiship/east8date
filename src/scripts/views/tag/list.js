@@ -21,28 +21,32 @@ export default class extends React.Component {
     defaultCurrent: +this.props.params['page'],
     onChange: (current) => {
       this.fetchData(current);
-      hashHistory.push(`/user/page/${current}`);
+      hashHistory.push(`/tag/page/${current}`);
     }
   }
 
   columns = [{
-    title: '用户名',
-    dataIndex: 'user_name',
-    key: 'user_name',
+    title: '短名',
+    dataIndex: 'tag_slug',
+    width:'10%',
+    key: 'tag_type',
   }, {
     title: '显示名',
-    dataIndex: 'user_nicename',
-    key: 'user_nicename',
-  },{
-    title: '创建时间',
-    dataIndex: 'created_at',
-    key: 'created_at',
+    width:'20%',
+    dataIndex: 'tag_name',
+    key: 'tag_name',
+  }, {
+    title: '引用次数',
+    width:'40%',
+    dataIndex: 'tag_num',
+    key: 'tag_num',
   },{
     title:'操作',
     key:'action',
+    width:'15%',
     render: (text, record,index) => (
       <span onClick={this.setCurrent({currentRecord:record,currentIndex:index})}>
-        <Link to={`/user/edit/${record.user_id}`}>编辑</Link>
+        <Link to={`/tag/edit/${record.tag_id}`}>编辑</Link>
         <span className="ant-divider" />
         <a href="javascript:;" onClick={this.showModal.bind(this)}>删除</a>
       </span>
@@ -50,7 +54,7 @@ export default class extends React.Component {
   }]
 
   fetchData(inIndex) {
-    return http.GET('/user',{
+    return http.GET('/tag',{
       data:{
         page:inIndex || 1,
         rows:this.state.pageSize || 10,
@@ -89,7 +93,7 @@ export default class extends React.Component {
   deleteItem(){
     this.state.items.splice(this.state.currentIndex,1);
     this.setState(this.state);
-    return http.DELETE('/user',{
+    return http.DELETE('/tag',{
       data:{
         id:this.state.currentRecord.user_id
       }
@@ -102,12 +106,12 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div className="user-view-list">
-        <Link className="hd" to="user/add">
-          <Tag color="#108ee9">添加新用户</Tag>
+      <div className="tag-view-list">
+        <Link className="hd" to="tag/add">
+          <Tag color="#108ee9">添加新标签</Tag>
         </Link>
         <Table className="bd" columns={this.columns} dataSource={this.state.items} pagination={this.state} />
-          <Modal title="删除用户？" visible={this.state.modalVisible}
+          <Modal title="删除此选项？" visible={this.state.modalVisible}
             onOk={this.modalOk.bind(this)} onCancel={this.modalCancel.bind(this)}
           >
             <p>确定删除？</p>
