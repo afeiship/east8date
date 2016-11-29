@@ -22,6 +22,14 @@ import TagList from 'views/tag/list';
 import TagEdit from 'views/tag/edit';
 import TagAdd from 'views/tag/add';
 
+//attachment module:
+import Image from 'views/image/index';
+import ImageList from 'views/image/list';
+import ImageEdit from 'views/image/edit';
+import ImageAdd from 'views/image/add';
+
+
+
 import Article from 'views/article/index';
 import Qa from 'views/qa/index';
 import App from 'views/app';
@@ -34,12 +42,14 @@ ReactDom.render(
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Dashbard}/>
+
         <Route path="/user" component={User}>
           <IndexRoute component={UserList}/>
           <Route path="/user/page/(:page)" component={UserList}/>
           <Route path="/user/edit/:user_id" component={UserEdit}/>
           <Route path="/user/add" component={UserAdd}/>
         </Route>
+
         <Route path="/option" component={Option}>
           <IndexRoute component={OptionList}/>
           <Route path="/option/page/(:page)" component={OptionList}/>
@@ -52,6 +62,13 @@ ReactDom.render(
           <Route path="/tag/page/(:page)" component={TagList}/>
           <Route path="/tag/edit/:tag_id" component={TagEdit}/>
           <Route path="/tag/add" component={TagAdd}/>
+        </Route>
+
+        <Route path="/image" component={Image}>
+          <IndexRoute component={ImageList}/>
+          <Route path="/image/page/(:page)" component={ImageList}/>
+          <Route path="/image/edit/:image_id" component={ImageEdit}/>
+          <Route path="/image/add" component={ImageAdd}/>
         </Route>
 
         <Route path="/article" component={Article}/>
