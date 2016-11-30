@@ -1,8 +1,9 @@
 import { Link } from 'react-router';
-import { Table, Icon,Modal,Tag } from 'antd';
+import { Table, Icon,Modal,Tag,message } from 'antd';
 import http from 'services/http';
 import { hashHistory } from 'react-router';
 import CONSTANT from 'services/constants';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 export default class extends React.Component {
   constructor(props){
@@ -50,7 +51,11 @@ export default class extends React.Component {
     width:'20%',
     render: (text, record,index) => (
       <span onClick={this.setCurrent({currentRecord:record,currentIndex:index})}>
-        <Link to={`/image/edit/${record.image_id}`}>编辑</Link>
+        <CopyToClipboard
+          onCopy={this.onCopyImg.bind(this)}
+          text={`<img src="${CONSTANT.IMG_URL}${record.image_path.slice(1)}" title="${record.image_title}" />`}>
+          <a href="javascript:;">复制</a>
+        </CopyToClipboard>
         <span className="ant-divider" />
         <a href="javascript:;" onClick={this.showModal.bind(this)}>删除</a>
       </span>
@@ -81,6 +86,10 @@ export default class extends React.Component {
     this.setState({
       modalVisible:true
     })
+  }
+
+  onCopyImg(){
+    message.success('图片路径复制好啦！');
   }
 
   hideModal(){
