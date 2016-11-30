@@ -6,6 +6,8 @@ export default class extends QaForm {
   constructor(props){
     super(props);
     this._formType='add';
+    this.fetchAllTags();
+    this.fetchRandomUser();
   }
   handleSubmit(){
     this.create(function(){

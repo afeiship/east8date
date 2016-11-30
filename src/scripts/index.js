@@ -36,9 +36,15 @@ import QaEdit from 'views/qa/edit';
 import QaAdd from 'views/qa/add';
 
 
-
-
+//Article module:
 import Article from 'views/article/index';
+import ArticleList from 'views/article/list';
+import ArticleEdit from 'views/article/edit';
+import ArticleAdd from 'views/article/add';
+
+
+
+
 import App from 'views/app';
 
 //and desing:
@@ -84,7 +90,13 @@ ReactDom.render(
           <Route path="/qa/edit/:qa_id" component={QaEdit}/>
           <Route path="/qa/add" component={QaAdd}/>
         </Route>
-        <Route path="/article" component={Article}/>
+
+        <Route path="/article" component={Article}>
+          <IndexRoute component={ArticleList}/>
+          <Route path="/article/page/(:page)" component={ArticleList}/>
+          <Route path="/article/edit/:article_id" component={ArticleEdit}/>
+          <Route path="/article/add" component={ArticleAdd}/>
+        </Route>
       </Route>
       <Route path="/login" component={Login}/>
     </Router>,
