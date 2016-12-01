@@ -17,7 +17,7 @@ export default class extends React.Component {
     article_title:'',
     article_description:'',
     article_content:'',
-    publish_at:'',
+    publish_at:moment(),
     article_tags:[],
     all_tags:[]
   }
