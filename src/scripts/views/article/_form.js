@@ -1,7 +1,9 @@
 import { hashHistory } from 'react-router';
 import http from 'services/http';
-import { Form, Icon, Input, Button,Select } from 'antd';
+import moment from 'moment';
+import { Form, Icon, Input, Button,Select,DatePicker } from 'antd';
 const Option = Select.Option;
+const dateFomrat='YYYY-MM-DD HH:mm:ss';
 
 export default class extends React.Component {
 
@@ -15,6 +17,7 @@ export default class extends React.Component {
     article_title:'',
     article_description:'',
     article_content:'',
+    publish_at:'',
     article_tags:[],
     all_tags:[]
   }
@@ -32,6 +35,11 @@ export default class extends React.Component {
     this.setState(this.state);
   }
 
+  handlePickerChange(value){
+    this.state.publish_at=value;
+    this.setState(this.state);
+  }
+
   fetchData(){
     var self=this;
     return http.GET('/article/',{
@@ -40,6 +48,7 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         nx.mix(self.state,inResp.data);
+        self.state.publish_at=moment(inResp.data.publish_at,dateFomrat);
         self.setState(self.state);
       }
     })
@@ -95,13 +104,15 @@ export default class extends React.Component {
   }
 
   toModel(inData){
+    console.log(inData);
     return {
       article_id:inData.article_id,
       article_user_id:inData.article_rand_user.user_id,
       article_title:inData.article_title,
       article_description:inData.article_description,
       article_content:inData.article_content,
-      article_tags:inData.article_tags.toString()
+      article_tags:inData.article_tags.toString(),
+      publish_at:inData.publish_at.format(dateFomrat)
     }
   }
 
@@ -152,6 +163,15 @@ export default class extends React.Component {
             return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
           })}
           </Select>
+        </Form.Item>
+        <Form.Item>
+          <DatePicker
+            showTime
+            format={dateFomrat}
+            placeholder="发布时间"
+            value={this.state.publish_at}
+            onChange={this.handlePickerChange.bind(this)}
+          />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">确认</Button>

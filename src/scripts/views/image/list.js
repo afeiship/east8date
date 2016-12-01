@@ -43,7 +43,11 @@ export default class extends React.Component {
     dataIndex: 'image_id',
     key: 'image_id',
     render: (text, record,index) => (
+      <CopyToClipboard
+        onCopy={this.onCopyImg.bind(this,record)}
+        text={`<img src="${CONSTANT.IMG_URL}${record.image_path.slice(1)}" title="${record.image_title}" />`}>
       <img width="100" height="75" src={`${CONSTANT.IMG_URL}/${record.image_path}`} />
+      </CopyToClipboard>
     )
   },{
     title:'操作',
@@ -51,12 +55,6 @@ export default class extends React.Component {
     width:'20%',
     render: (text, record,index) => (
       <span onClick={this.setCurrent({currentRecord:record,currentIndex:index})}>
-        <CopyToClipboard
-          onCopy={this.onCopyImg.bind(this)}
-          text={`<img src="${CONSTANT.IMG_URL}${record.image_path.slice(1)}" title="${record.image_title}" />`}>
-          <a href="javascript:;">复制</a>
-        </CopyToClipboard>
-        <span className="ant-divider" />
         <a href="javascript:;" onClick={this.showModal.bind(this)}>删除</a>
       </span>
     )
@@ -88,8 +86,8 @@ export default class extends React.Component {
     })
   }
 
-  onCopyImg(){
-    message.success('图片路径复制好啦！');
+  onCopyImg(inRecord){
+    message.success(`${inRecord.image_title} - 图片路径复制好啦！`);
   }
 
   hideModal(){

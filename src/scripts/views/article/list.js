@@ -36,6 +36,11 @@ export default class extends React.Component {
     dataIndex: 'article_description',
     key: 'article_description',
   },{
+    title: '发布时间',
+    width:'20%',
+    dataIndex: 'publish_at',
+    key: 'publish_at',
+  },{
     title:'操作',
     key:'action',
     width:'15%',
