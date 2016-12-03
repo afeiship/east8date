@@ -26,6 +26,11 @@ export default class extends React.Component {
     console.log('Should be implement!');
   }
 
+  initCKEditor(inData){
+    this._ckeditor=CKEDITOR.replace('ck-content');
+    this._ckeditor.setData(inData);
+  }
+
   handleChange(field,ev){
     if(typeof(ev)=='string' || Array.isArray(ev)){
       this.state[field]=ev;
@@ -49,6 +54,7 @@ export default class extends React.Component {
       success:function(inResp) {
         nx.mix(self.state,inResp.data);
         self.state.publish_at=moment(inResp.data.publish_at,dateFomrat);
+        self.initCKEditor(self.state.article_content);
         self.setState(self.state);
       }
     })
@@ -110,7 +116,7 @@ export default class extends React.Component {
       article_user_id:inData.article_rand_user.user_id,
       article_title:inData.article_title,
       article_description:inData.article_description,
-      article_content:inData.article_content,
+      article_content:this._ckeditor.getData(),
       article_tags:inData.article_tags.toString(),
       publish_at:inData.publish_at.format(dateFomrat)
     }
@@ -146,9 +152,9 @@ export default class extends React.Component {
         </Form.Item>
         <Form.Item>
           <Input size="large" type="textarea"
+            id='ck-content'
             autosize={{ minRows: 8, maxRows: 40 }}
             value={this.state.article_content}
-            onChange={this.handleChange.bind(this,'article_content')}
             addonBefore={<Icon type="info-circle-o" />} placeholder="文章主体内容" />
         </Form.Item>
         <Form.Item>
