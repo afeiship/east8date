@@ -22,6 +22,13 @@ import TagList from 'views/tag/list';
 import TagEdit from 'views/tag/edit';
 import TagAdd from 'views/tag/add';
 
+//cate module:
+import Cate from 'views/cate/index';
+import CateList from 'views/cate/list';
+import CateEdit from 'views/cate/edit';
+import CateAdd from 'views/cate/add';
+
+
 //attachment module:
 import Image from 'views/image/index';
 import ImageList from 'views/image/list';
@@ -73,6 +80,13 @@ ReactDom.render(
           <Route path="/tag/page/(:page)" component={TagList}/>
           <Route path="/tag/edit/:tag_id" component={TagEdit}/>
           <Route path="/tag/add" component={TagAdd}/>
+        </Route>
+
+        <Route path="/cate" component={Cate}>
+          <IndexRoute component={CateList}/>
+          <Route path="/cate/page/(:page)" component={CateList}/>
+          <Route path="/cate/edit/:cate_id" component={CateEdit}/>
+          <Route path="/cate/add" component={CateAdd}/>
         </Route>
 
         <Route path="/image" component={Image}>
