@@ -7,7 +7,9 @@ export default class extends ArticleForm {
     super(props);
     this._formType='add';
     this.fetchAllTags();
-    this.fetchRandomUser();
+    this.fetchRandomUser(function(){
+      this.initCKEditor('');
+    });
   }
   handleSubmit(){
     this.create(function(){

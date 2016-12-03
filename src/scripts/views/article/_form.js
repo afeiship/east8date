@@ -60,7 +60,7 @@ export default class extends React.Component {
     })
   }
 
-  fetchRandomUser(){
+  fetchRandomUser(inCallback){
     var self=this;
     return http.GET('/user/',{
       data:{
@@ -68,8 +68,8 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         self.state.article_rand_user=inResp.data;
-        console.log(self.state);
         self.setState(self.state);
+        inCallback.call(self,inResp);
       }
     })
   }
