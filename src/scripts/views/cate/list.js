@@ -21,32 +21,27 @@ export default class extends React.Component {
     defaultCurrent: +this.props.params['page'],
     onChange: (current) => {
       this.fetchData(current);
-      hashHistory.push(`/tag/page/${current}`);
+      hashHistory.push(`/cate/page/${current}`);
     }
   }
 
   columns = [{
     title: '短名',
-    dataIndex: 'tag_slug',
+    dataIndex: 'cate_slug',
     width:'10%',
-    key: 'tag_type',
+    key: 'cate_type',
   }, {
     title: '显示名',
     width:'20%',
-    dataIndex: 'tag_name',
-    key: 'tag_name',
-  }, {
-    title: '引用次数',
-    width:'40%',
-    dataIndex: 'tag_num',
-    key: 'tag_num',
+    dataIndex: 'cate_name',
+    key: 'cate_name',
   },{
     title:'操作',
     key:'action',
     width:'15%',
     render: (text, record,index) => (
       <span onClick={this.setCurrent({currentRecord:record,currentIndex:index})}>
-        <Link to={`/tag/edit/${record.tag_id}`}>编辑</Link>
+        <Link to={`/cate/edit/${record.cate_id}`}>编辑</Link>
         <span className="ant-divider" />
         <a href="javascript:;" onClick={this.showModal.bind(this)}>删除</a>
       </span>
@@ -54,7 +49,7 @@ export default class extends React.Component {
   }]
 
   fetchData(inIndex) {
-    return http.GET('/tag',{
+    return http.GET('/cate',{
       data:{
         page:inIndex || 1,
         rows:this.state.pageSize || 10,
@@ -93,7 +88,7 @@ export default class extends React.Component {
   deleteItem(){
     this.state.items.splice(this.state.currentIndex,1);
     this.setState(this.state);
-    return http.DELETE('/tag',{
+    return http.DELETE('/cate',{
       data:{
         id:this.state.currentRecord.user_id
       }
@@ -106,9 +101,9 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div className="tag-view-list">
-        <Link className="hd" to="tag/add">
-          <Tag color="#108ee9">添加新标签</Tag>
+      <div className="cate-view-list">
+        <Link className="hd" to="cate/add">
+          <Tag color="#108ee9">添加分类</Tag>
         </Link>
         <Table className="bd" columns={this.columns} dataSource={this.state.items} pagination={this.state} />
           <Modal title="删除此选项？" visible={this.state.modalVisible}

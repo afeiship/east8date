@@ -10,6 +10,7 @@ export default class extends React.Component {
   constructor(props){
     super(props);
     this._formType='';
+    this.fetchAllCates();
   }
 
   state={
@@ -17,9 +18,11 @@ export default class extends React.Component {
     article_title:'',
     article_description:'',
     article_content:'',
+    article_cate_id:[],
     publish_at:moment(),
     article_tags:[],
-    all_tags:[]
+    all_tags:[],
+    all_cates:[]
   }
 
   handleSubmit(){
@@ -54,6 +57,7 @@ export default class extends React.Component {
       success:function(inResp) {
         nx.mix(self.state,inResp.data);
         self.state.publish_at=moment(inResp.data.publish_at,dateFomrat);
+        self.state.article_cate_id=[inResp.data.article_cate_id];
         self.initCKEditor(self.state.article_content);
         self.setState(self.state);
       }
@@ -82,6 +86,19 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         self.state.all_tags= inResp.data.items;
+        self.setState(self.state);
+      }
+    })
+  }
+
+  fetchAllCates(){
+    var self=this;
+    return http.GET('/cate/',{
+      data:{
+        all:2000
+      },
+      success:function(inResp) {
+        self.state.all_cates= inResp.data.items;
         self.setState(self.state);
       }
     })
@@ -116,6 +133,7 @@ export default class extends React.Component {
       article_user_id:inData.article_rand_user.user_id,
       article_title:inData.article_title,
       article_description:inData.article_description,
+      article_cate_id:inData.article_cate_id[0],
       article_content:this._ckeditor.getData(),
       article_tags:inData.article_tags.toString(),
       publish_at:inData.publish_at.format(dateFomrat)
@@ -133,9 +151,14 @@ export default class extends React.Component {
           <span>Edit</span>
         </header>
         <Form.Item>
-          <Input size="large" disabled value={this.state.article_rand_user.user_nicename}
+          <Input size="large" style={{ width: 200 }} disabled value={this.state.article_rand_user.user_nicename}
             addonBefore={<Icon type="info-circle-o" />}
             placeholder="随机一位用户" />
+          <Select size="large" value={this.state.article_cate_id} style={{ width: 200 }} onChange={this.handleChange.bind(this,'article_cate_id')}>
+            {this.state.all_cates.map(function(item){
+              return <Option key={item.cate_id} value={item.cate_id}>{item.cate_name}</Option>;
+            })}
+            </Select>
         </Form.Item>
         <Form.Item>
           <Input size="large" value={this.state.article_title}
