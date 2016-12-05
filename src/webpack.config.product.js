@@ -6,6 +6,7 @@
   var config = require('./webpack_config.json');
   var ExtractTextPlugin = require('extract-text-webpack-plugin');
   var PurifyCSSPlugin = require('purifycss-webpack-plugin');
+  var CopyWebpackPlugin = require('copy-webpack-plugin');
   var productPlugins = [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
@@ -37,7 +38,12 @@
         minify: true,
         info: true
       }
-    })
+    }),
+    new CopyWebpackPlugin([{
+        from: __dirname + '/scripts/components/ckeditor',
+        to:'../dist/scripts/components/ckeditor',
+        toType:'dir'
+    }])
   ];
 
   $.initMultiHtmlWebpackPlugins();
@@ -47,7 +53,7 @@
   module.exports = {
     entry: $.entry,
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: path.join(__dirname, '../dist'),
       filename: '[name]-[hash:6].js',
       chunkFilename: '[id]-[hash:6].js',
       minify: false,
