@@ -1,6 +1,6 @@
 import { hashHistory } from 'react-router';
 import http from 'services/http';
-import { Form, Icon, Input, Button,Select } from 'antd';
+import { Form, Icon, Input, Button,Select,Row,Col } from 'antd';
 const Option = Select.Option;
 
 export default class extends React.Component {
@@ -8,6 +8,7 @@ export default class extends React.Component {
   constructor(props){
     super(props);
     this._formType='';
+    this.fetchAllCates();
   }
 
   state={
@@ -15,7 +16,9 @@ export default class extends React.Component {
     qa_question:'',
     qa_description:'',
     qa_answer:'',
+    qa_cate_id:[],
     qa_tags:[],
+    all_cates:[],
     all_tags:[]
   }
 
@@ -40,6 +43,7 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         nx.mix(self.state,inResp.data);
+        self.state.qa_cate_id=[inResp.data.qa_cate_id];
         self.setState(self.state);
       }
     })
@@ -53,7 +57,6 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         self.state.qa_rand_user=inResp.data;
-        console.log(self.state);
         self.setState(self.state);
       }
     })
@@ -67,6 +70,19 @@ export default class extends React.Component {
       },
       success:function(inResp) {
         self.state.all_tags= inResp.data.items;
+        self.setState(self.state);
+      }
+    })
+  }
+
+  fetchAllCates(){
+    var self=this;
+    return http.GET('/cate/',{
+      data:{
+        all:2000
+      },
+      success:function(inResp) {
+        self.state.all_cates= inResp.data.items;
         self.setState(self.state);
       }
     })
@@ -101,6 +117,7 @@ export default class extends React.Component {
       qa_question:inData.qa_question,
       qa_description:inData.qa_description,
       qa_answer:inData.qa_answer,
+      qa_cate_id:inData.qa_cate_id[0],
       qa_tags:inData.qa_tags.toString()
     }
   }
@@ -116,9 +133,33 @@ export default class extends React.Component {
           <span>Edit</span>
         </header>
         <Form.Item>
-          <Input size="large" disabled value={this.state.qa_rand_user.user_nicename}
-            addonBefore={<Icon type="info-circle-o" />}
-            placeholder="随机一位用户" />
+            <Row>
+              <Col span={6}>
+                <Select size="large"
+                  placeholder="请选择一个分类"
+                   value={this.state.qa_cate_id} style={{ width: 200 }} onChange={this.handleChange.bind(this,'qa_cate_id')}>
+                  {this.state.all_cates.map(function(item){
+                    return <Option key={item.cate_id} value={item.cate_id}>{item.cate_name}</Option>;
+                  })}
+                  </Select>
+              </Col>
+              <Col span={12}>
+                <Select
+                  multiple
+                  style={{ width: '100%' }}
+                  placeholder="Please select"
+                  onChange={this.handleChange.bind(this,'qa_tags')}
+                  value={this.state.qa_tags}
+                >
+                {this.state.all_tags.map(function(item){
+                  return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
+                })}
+                </Select>
+              </Col>
+              <Col span={6}>
+                {this.state.qa_rand_user.user_nicename}
+              </Col>
+            </Row>
         </Form.Item>
         <Form.Item>
           <Input size="large" value={this.state.qa_question}
@@ -139,19 +180,6 @@ export default class extends React.Component {
             value={this.state.qa_answer}
             onChange={this.handleChange.bind(this,'qa_answer')}
             addonBefore={<Icon type="info-circle-o" />} placeholder="问题的回答" />
-        </Form.Item>
-        <Form.Item>
-          <Select
-            multiple
-            style={{ width: '100%' }}
-            placeholder="Please select"
-            onChange={this.handleChange.bind(this,'qa_tags')}
-            value={this.state.qa_tags}
-          >
-          {this.state.all_tags.map(function(item){
-            return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
-          })}
-          </Select>
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">确认</Button>
