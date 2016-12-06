@@ -1,7 +1,7 @@
 import { hashHistory } from 'react-router';
 import http from 'services/http';
 import moment from 'moment';
-import { Form, Icon, Input, Button,Select,DatePicker } from 'antd';
+import { Form, Icon, Input, Button,Select,DatePicker,Row,Col } from 'antd';
 const Option = Select.Option;
 const dateFomrat='YYYY-MM-DD HH:mm:ss';
 
@@ -151,14 +151,43 @@ export default class extends React.Component {
           <span>Edit</span>
         </header>
         <Form.Item>
-          <Input size="large" style={{ width: 200 }} disabled value={this.state.article_rand_user.user_nicename}
-            addonBefore={<Icon type="info-circle-o" />}
-            placeholder="随机一位用户" />
-          <Select size="large" value={this.state.article_cate_id} style={{ width: 200 }} onChange={this.handleChange.bind(this,'article_cate_id')}>
-            {this.state.all_cates.map(function(item){
-              return <Option key={item.cate_id} value={item.cate_id}>{item.cate_name}</Option>;
-            })}
-            </Select>
+          <Row>
+            <Col span={6}>
+              <Select size="large"
+                placeholder="请选择一个分类"
+                 value={this.state.article_cate_id} style={{ width: 200 }} onChange={this.handleChange.bind(this,'article_cate_id')}>
+                {this.state.all_cates.map(function(item){
+                  return <Option key={item.cate_id} value={item.cate_id}>{item.cate_name}</Option>;
+                })}
+                </Select>
+            </Col>
+            <Col span={6}>
+              <Select
+                multiple
+                style={{ width: '100%' }}
+                placeholder="Please select"
+                onChange={this.handleChange.bind(this,'article_tags')}
+                value={this.state.article_tags}
+              >
+              {this.state.all_tags.map(function(item){
+                return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
+              })}
+              </Select>
+            </Col>
+            <Col span={6}>
+              <DatePicker
+                showTime
+                format={dateFomrat}
+                placeholder="发布时间"
+                value={this.state.publish_at}
+                onChange={this.handlePickerChange.bind(this)}
+              />
+            </Col>
+            <Col span={6}>
+                {this.state.article_rand_user.user_nicename}
+            </Col>
+
+          </Row>
         </Form.Item>
         <Form.Item>
           <Input size="large" value={this.state.article_title}
@@ -176,31 +205,9 @@ export default class extends React.Component {
         <Form.Item>
           <Input size="large" type="textarea"
             id='ck-content'
-            autosize={{ minRows: 8, maxRows: 40 }}
+            autosize={{ minRows: 10, maxRows: 40 }}
             value={this.state.article_content}
             addonBefore={<Icon type="info-circle-o" />} placeholder="文章主体内容" />
-        </Form.Item>
-        <Form.Item>
-          <Select
-            multiple
-            style={{ width: '100%' }}
-            placeholder="Please select"
-            onChange={this.handleChange.bind(this,'article_tags')}
-            value={this.state.article_tags}
-          >
-          {this.state.all_tags.map(function(item){
-            return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
-          })}
-          </Select>
-        </Form.Item>
-        <Form.Item>
-          <DatePicker
-            showTime
-            format={dateFomrat}
-            placeholder="发布时间"
-            value={this.state.publish_at}
-            onChange={this.handlePickerChange.bind(this)}
-          />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">确认</Button>
