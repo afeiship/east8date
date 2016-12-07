@@ -9,6 +9,7 @@ export default class extends React.Component {
     super(props);
     this._formType='';
     this.fetchAllCates();
+    this.fetchAllWikis();
   }
 
   state={
@@ -18,7 +19,9 @@ export default class extends React.Component {
     qa_answer:'',
     qa_cate_id:[],
     qa_tags:[],
+    qa_wikis:[],
     all_cates:[],
+    all_wikis:[],
     all_tags:[]
   }
 
@@ -75,6 +78,19 @@ export default class extends React.Component {
     })
   }
 
+  fetchAllWikis(){
+    var self=this;
+    return http.GET('/wiki/',{
+      data:{
+        all:2000
+      },
+      success:function(inResp) {
+        self.state.all_wikis= inResp.data.items;
+        self.setState(self.state);
+      }
+    })
+  }
+
   fetchAllCates(){
     var self=this;
     return http.GET('/cate/',{
@@ -118,7 +134,8 @@ export default class extends React.Component {
       qa_description:inData.qa_description,
       qa_answer:inData.qa_answer,
       qa_cate_id:inData.qa_cate_id[0],
-      qa_tags:inData.qa_tags.toString()
+      qa_tags:inData.qa_tags.toString(),
+      qa_wikis:inData.qa_wikis.toString()
     }
   }
 
@@ -134,7 +151,7 @@ export default class extends React.Component {
         </header>
         <Form.Item>
             <Row>
-              <Col span={6}>
+              <Col span={12}>
                 <Select size="large"
                   placeholder="请选择一个分类"
                    value={this.state.qa_cate_id} style={{ width: 200 }} onChange={this.handleChange.bind(this,'qa_cate_id')}>
@@ -144,22 +161,40 @@ export default class extends React.Component {
                   </Select>
               </Col>
               <Col span={12}>
-                <Select
-                  multiple
-                  style={{ width: '100%' }}
-                  placeholder="Please select"
-                  onChange={this.handleChange.bind(this,'qa_tags')}
-                  value={this.state.qa_tags}
-                >
-                {this.state.all_tags.map(function(item){
-                  return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
-                })}
-                </Select>
-              </Col>
-              <Col span={6}>
                 {this.state.qa_rand_user.user_nicename}
               </Col>
             </Row>
+        </Form.Item>
+        <Form.Item>
+          <Row>
+            <Col span={12}>
+              <Select
+                multiple
+                style={{ width: '100%' }}
+                placeholder="Please select"
+                onChange={this.handleChange.bind(this,'qa_tags')}
+                value={this.state.qa_tags}
+              >
+              {this.state.all_tags.map(function(item){
+                return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
+              })}
+              </Select>
+            </Col>
+
+            <Col span={12}>
+              <Select
+                multiple
+                style={{ width: '100%' }}
+                placeholder="Please select"
+                onChange={this.handleChange.bind(this,'qa_wikis')}
+                value={this.state.qa_wikis}
+              >
+              {this.state.all_wikis.map(function(item){
+                return <Option key={item.wiki_id} value={item.wiki_id}>{item.wiki_name}</Option>;
+              })}
+              </Select>
+            </Col>
+          </Row>
         </Form.Item>
         <Form.Item>
           <Input size="large" value={this.state.qa_question}

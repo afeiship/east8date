@@ -18,6 +18,10 @@ export default class extends React.Component {
           <Icon type="tags" />
           标签管理
         </Link>
+        <Link to='/wiki' activeClassName="active">
+          <Icon type="link" />
+          词条管理
+        </Link>
         <Link to='/cate' activeClassName="active">
           <Icon type="bars" />
           分类管理

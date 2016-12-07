@@ -50,6 +50,13 @@ import ArticleEdit from 'views/article/edit';
 import ArticleAdd from 'views/article/add';
 
 
+//Article module:
+import Wiki from 'views/wiki/index';
+import WikiList from 'views/wiki/list';
+import WikiEdit from 'views/wiki/edit';
+import WikiAdd from 'views/wiki/add';
+
+
 import App from 'views/app';
 
 //and desing:
@@ -108,6 +115,13 @@ ReactDom.render(
           <Route path="/article/page/(:page)" component={ArticleList}/>
           <Route path="/article/edit/:article_id" component={ArticleEdit}/>
           <Route path="/article/add" component={ArticleAdd}/>
+        </Route>
+
+        <Route path="/wiki" component={Wiki}>
+          <IndexRoute component={WikiList}/>
+          <Route path="/wiki/page/(:page)" component={WikiList}/>
+          <Route path="/wiki/edit/:wiki_id" component={WikiEdit}/>
+          <Route path="/wiki/add" component={WikiAdd}/>
         </Route>
       </Route>
       <Route path="/login" component={Login}/>

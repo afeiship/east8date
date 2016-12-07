@@ -11,6 +11,7 @@ export default class extends React.Component {
     super(props);
     this._formType='';
     this.fetchAllCates();
+    this.fetchAllWikis();
   }
 
   state={
@@ -21,7 +22,9 @@ export default class extends React.Component {
     article_cate_id:[],
     publish_at:moment(),
     article_tags:[],
+    article_wikis:[],
     all_tags:[],
+    all_wikis:[],
     all_cates:[]
   }
 
@@ -91,6 +94,19 @@ export default class extends React.Component {
     })
   }
 
+  fetchAllWikis(){
+    var self=this;
+    return http.GET('/wiki/',{
+      data:{
+        all:2000
+      },
+      success:function(inResp) {
+        self.state.all_wikis= inResp.data.items;
+        self.setState(self.state);
+      }
+    })
+  }
+
   fetchAllCates(){
     var self=this;
     return http.GET('/cate/',{
@@ -135,6 +151,7 @@ export default class extends React.Component {
       article_description:inData.article_description,
       article_cate_id:inData.article_cate_id[0],
       article_content:this._ckeditor.getData(),
+      article_wikis:inData.article_wikis.toString(),
       article_tags:inData.article_tags.toString(),
       publish_at:inData.publish_at.format(dateFomrat)
     }
@@ -162,19 +179,6 @@ export default class extends React.Component {
                 </Select>
             </Col>
             <Col span={6}>
-              <Select
-                multiple
-                style={{ width: '100%' }}
-                placeholder="Please select"
-                onChange={this.handleChange.bind(this,'article_tags')}
-                value={this.state.article_tags}
-              >
-              {this.state.all_tags.map(function(item){
-                return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
-              })}
-              </Select>
-            </Col>
-            <Col span={6}>
               <DatePicker
                 showTime
                 format={dateFomrat}
@@ -187,6 +191,36 @@ export default class extends React.Component {
                 {this.state.article_rand_user.user_nicename}
             </Col>
 
+          </Row>
+        </Form.Item>
+        <Form.Item>
+          <Row>
+            <Col span={12}>
+              <Select
+                multiple
+                style={{ width: '100%' }}
+                placeholder="Please select"
+                onChange={this.handleChange.bind(this,'article_tags')}
+                value={this.state.article_tags}
+              >
+              {this.state.all_tags.map(function(item){
+                return <Option key={item.tag_id} value={item.tag_id}>{item.tag_name}</Option>;
+              })}
+              </Select>
+            </Col>
+            <Col span={12}>
+              <Select
+                multiple
+                style={{ width: '100%' }}
+                placeholder="Please select"
+                onChange={this.handleChange.bind(this,'article_wikis')}
+                value={this.state.article_wikis}
+              >
+              {this.state.all_wikis.map(function(item){
+                return <Option key={item.wiki_id} value={item.wiki_id}>{item.wiki_name}</Option>;
+              })}
+              </Select>
+            </Col>
           </Row>
         </Form.Item>
         <Form.Item>
@@ -205,7 +239,7 @@ export default class extends React.Component {
         <Form.Item>
           <Input size="large" type="textarea"
             id='ck-content'
-            autosize={{ minRows: 16, maxRows: 40 }}
+            autosize={{ minRows: 3, maxRows: 40 }}
             value={this.state.article_content}
             addonBefore={<Icon type="info-circle-o" />} placeholder="文章主体内容" />
         </Form.Item>
