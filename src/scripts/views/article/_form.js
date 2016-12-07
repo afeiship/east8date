@@ -239,7 +239,7 @@ export default class extends React.Component {
         <Form.Item>
           <Input size="large" type="textarea"
             id='ck-content'
-            autosize={{ minRows: 3, maxRows: 40 }}
+            autosize={{ minRows: 3, maxRows: 20 }}
             value={this.state.article_content}
             addonBefore={<Icon type="info-circle-o" />} placeholder="文章主体内容" />
         </Form.Item>

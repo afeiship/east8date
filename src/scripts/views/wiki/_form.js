@@ -96,7 +96,7 @@ export default class extends React.Component {
           <Input size="large" value={this.state.wiki_name} onChange={this.handleChange.bind(this,'wiki_name')} addonBefore={<Icon type="info-circle-o" />} placeholder="显示名" />
         </Form.Item>
         <Form.Item>
-          <Input size="large" value={this.state.wiki_img} onChange={this.handleChange.bind(this,'wiki_img')} addonBefore={<Icon type="info-circle-o" />} placeholder="图片路径" />
+          <Input size="large" value={this.state.wiki_img} onChange={this.handleChange.bind(this,'wiki_img')} addonBefore={<Icon type="info-circle-o" />} placeholder="封面图片" />
         </Form.Item>
         <Form.Item>
           <Input size="large" type="textarea"

@@ -33,7 +33,7 @@ export default class extends React.Component {
     width:'20%',
     key: 'image_title',
   }, {
-    title: '路径',
+    title: '封面图专用',
     width:'30%',
     dataIndex: 'image_path',
     key: 'image_path',
@@ -62,6 +62,8 @@ export default class extends React.Component {
     width:'20%',
     render: (text, record,index) => (
       <span onClick={this.setCurrent({currentRecord:record,currentIndex:index})}>
+        <Link to={`/image/edit/${record.image_id}`}>编辑</Link>
+        <span className="ant-divider" />
         <a href="javascript:;" onClick={this.showModal.bind(this)}>删除</a>
       </span>
     )
