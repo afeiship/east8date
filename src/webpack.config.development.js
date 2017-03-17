@@ -33,7 +33,16 @@
     resolve: $.resolve,
     devtool: '#source-map',
     devServer: {
-      hot: true
+      hot: true,
+      port: 8080,
+      proxy: {
+        '/helper': {
+           //target: 'http://train.dcpai.cn:80',
+          target: 'http://192.168.10.253:80',
+          pathRewrite: { '^/helper': '/helper' },
+          changeOrigin: true
+        }
+      }
     }
   };
 
