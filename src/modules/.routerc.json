@@ -1,0 +1,93 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "children": [
+            { "routerFilePath": "/admin/backend-cates/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/backend-cates/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/backend-cates/index.tsx" }
+          ],
+          "routerFilePath": "/admin/backend-cates/__init__.tsx",
+          "routerPath": "backend-cates"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/frontend-cates/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/frontend-cates/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/frontend-cates/index.tsx" }
+          ],
+          "routerFilePath": "/admin/frontend-cates/__init__.tsx",
+          "routerPath": "frontend-cates"
+        },
+        { "routerIndex": true, "routerFilePath": "/admin/index.tsx" },
+        {
+          "children": [
+            { "routerFilePath": "/admin/params/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/params/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/params/index.tsx" }
+          ],
+          "routerFilePath": "/admin/params/__init__.tsx",
+          "routerPath": "params"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/post-cates/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/post-cates/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/post-cates/index.tsx" }
+          ],
+          "routerFilePath": "/admin/post-cates/__init__.tsx",
+          "routerPath": "post-cates"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/posts/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/posts/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/posts/index.tsx" }
+          ],
+          "routerFilePath": "/admin/posts/__init__.tsx",
+          "routerPath": "posts"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/products/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/products/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/products/index.tsx" }
+          ],
+          "routerFilePath": "/admin/products/__init__.tsx",
+          "routerPath": "products"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/prop-names/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/prop-names/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/prop-names/index.tsx" }
+          ],
+          "routerFilePath": "/admin/prop-names/__init__.tsx",
+          "routerPath": "prop-names"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/roles/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/roles/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/roles/index.tsx" }
+          ],
+          "routerFilePath": "/admin/roles/__init__.tsx",
+          "routerPath": "roles"
+        },
+        {
+          "children": [
+            { "routerFilePath": "/admin/users/add.tsx", "routerPath": "add" },
+            { "routerFilePath": "/admin/users/edit.tsx", "routerPath": "edit" },
+            { "routerIndex": true, "routerFilePath": "/admin/users/index.tsx" }
+          ],
+          "routerFilePath": "/admin/users/__init__.tsx",
+          "routerPath": "users"
+        }
+      ],
+      "routerPath": "admin",
+      "routerFilePath": "/admin/__init__.tsx"
+    },
+    { "children": [], "routerPath": "login", "routerFilePath": "/login/__init__.tsx" }
+  ]
+}

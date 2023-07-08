@@ -1,0 +1,5 @@
+{
+  "commands": [
+    { "label": "🍎 发布到 production 环境", "value": "production" }
+  ]
+}
