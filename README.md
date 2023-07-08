@@ -1,5 +1,5 @@
-# moban-admin
-> Moban admin system.
+# vite-react-admin
+> Admin panel based on vite+antd+react.
 
 ## develop
 - http://127.0.0.1:4000/#/admin
