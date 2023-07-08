@@ -18,13 +18,6 @@ export default obs(() => {
   const pathname = location.hash.slice(1);
   const activeKeys = getActiveKeys(pathname);
 
-  const handleFlush = async () => {
-    setLoading(true);
-    await nx.$api.flush();
-    message.success('🚀 Flush success');
-    setLoading(false);
-  };
-
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider
@@ -46,9 +39,6 @@ export default obs(() => {
         <Row style={{ padding: '10px 16px' }} align="middle" justify="space-between">
           <Breadcrumbs />
           <Space>
-            <Button disabled={loading} loading={loading} size="small" onClick={handleFlush}>
-              🎯 Flush
-            </Button>
             <ReactAntConfirm onClick={() => navigate('/')}>
               <Button size="small" icon={<span className="mr-1">🎱</span>}>
                 注销
