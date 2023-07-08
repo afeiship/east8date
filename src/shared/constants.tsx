@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  SecurityScanOutlined,
-  TeamOutlined,
-  CalculatorOutlined,
-  ContactsOutlined,
-  PieChartOutlined,
-  AndroidOutlined,
-  AppleOutlined,
-  GithubOutlined,
-  IeOutlined
-} from '@ant-design/icons';
+import { SecurityScanOutlined, TeamOutlined, CalculatorOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -23,13 +13,7 @@ export const KV_NAME_PAIRS = { value: 'id', label: 'name' };
 export const GLOBAL_MENUS: MenuItem[] = [
   { key: 'roles', label: 'Roles', icon: <SecurityScanOutlined /> },
   { key: 'users', label: 'Users', icon: <TeamOutlined /> },
-  { key: 'params', label: 'Params', icon: <CalculatorOutlined /> },
-  { key: 'posts', label: 'Posts', icon: <ContactsOutlined /> },
-  { key: 'products', label: 'Products', icon: <PieChartOutlined /> },
-  { key: 'prop-names', label: 'PropNames', icon: <AndroidOutlined /> },
-  { key: 'backend-cates', label: 'BackendCates', icon: <AppleOutlined /> },
-  { key: 'frontend-cates', label: 'FrontendCates', icon: <GithubOutlined /> },
-  { key: 'post-cates', label: 'PostCates', icon: <IeOutlined /> }
+  { key: 'params', label: 'Params', icon: <CalculatorOutlined /> }
 ];
 
 export const GLOBAL_FORM_PRESETS = {

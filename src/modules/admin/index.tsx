@@ -25,9 +25,6 @@ export default () => {
       <p className="text-5xl">⏰</p>
       <p>期待中，先看看其它栏目?...</p>
       <Space split={<Divider type="vertical" />}>
-        <NavLink to="/admin/products">Products</NavLink>
-        <NavLink to="/admin/backend-cates">BackendCates</NavLink>
-        <NavLink to="/admin/frontend-cates">FrontendCates</NavLink>
         <NavLink to="/admin/users">Users</NavLink>
         <NavLink to="/admin/roles">Roles</NavLink>
       </Space>
