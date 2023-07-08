@@ -1,5 +1,4 @@
-import { Button, Layout, Menu, Row, Space, message } from 'antd';
-import React, { useState } from 'react';
+import { Button, Layout, Menu, Row, Space } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { obs } from '@jswork/react-mobxer';
 import { Logo } from '@/shared/components/logo';
@@ -13,7 +12,6 @@ const { Content, Sider } = Layout;
 
 export default obs(() => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const { collapsed } = nx.$root.layout;
   const pathname = location.hash.slice(1);
   const activeKeys = getActiveKeys(pathname);
