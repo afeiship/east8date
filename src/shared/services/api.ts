@@ -9,4 +9,4 @@ const options = {
   transformResponse: (res) => nx.get(res, 'data.data')
 };
 
-export default httpSchema(schema, options);
+nx.$api = httpSchema(schema, options);
