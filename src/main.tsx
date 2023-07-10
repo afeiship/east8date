@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import zhCN from 'antd/locale/zh_CN';
