@@ -12,12 +12,14 @@ export default () => {
     layout: 'vertical'
   } as any;
 
-  const { mutateAsync, isLoading } = useMutation({ mutationFn: (data) => nx.$api.login(data) });
+  const { mutateAsync, isLoading } = useMutation<Record<string, any>>({
+    mutationFn: nx.$api.login
+  });
 
   const handleFinish = async (e) => {
     const { value } = e.target;
-    const res = (await mutateAsync(value)) as any;
-    nx.$local.set('token', res?.token);
+    const res = await mutateAsync(value);
+    nx.$local.set('session', res);
     nx.navigate('/admin');
   };
 

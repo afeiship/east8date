@@ -5,7 +5,7 @@ export default (options) => {
   const { pathname } = new URL(url);
   if (IGNORE_AUTH.includes(pathname)) return options;
 
-  const token = nx.$local.get('token');
+  const token = nx.$local.get('session.token');
   token && nx.set(options, 'headers.Authorization', `Bearer ${token}`);
   nx.set(options, 'headers.Accept-Language', `zh-CN`);
 
