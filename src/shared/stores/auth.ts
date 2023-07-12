@@ -5,5 +5,17 @@ export default class {
 
   constructor() {
     makeAutoObservable(this);
+
+    // reaction watch session change
+    reaction(
+      () => this.session,
+      (session, prevSession) => {
+        if (session === null) {
+          nx.$local.del('session');
+        } else {
+          nx.$local.set('session', session);
+        }
+      }
+    );
   }
 }

@@ -37,7 +37,11 @@ export default obs(() => {
         <Row style={{ padding: '10px 16px' }} align="middle" justify="space-between">
           <Breadcrumbs />
           <Space>
-            <ReactAntConfirm onClick={() => navigate('/')}>
+            <ReactAntConfirm
+              onClick={() => {
+                nx.$root.auth.session = null;
+                navigate('/');
+              }}>
               <Button size="small" icon={<span className="mr-1">🎱</span>}>
                 注销
               </Button>
