@@ -1,9 +1,9 @@
 import ReactFullImage from '@jswork/react-full-image';
 import { Button } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
+import { useMutation } from '@tanstack/react-query';
 import { FormBuilder } from '@jswork/antd-form-builder';
 import { header, meta, Container } from './_misc';
-import { useState } from 'react';
 
 export default () => {
   const opts = {
@@ -12,15 +12,13 @@ export default () => {
     layout: 'vertical'
   } as any;
 
-  const [loading, setLoading] = useState(false);
+  const { mutateAsync, isLoading } = useMutation({ mutationFn: (data) => nx.$api.login(data) });
 
   const handleFinish = async (e) => {
     const { value } = e.target;
-    setLoading(true);
-    const res = await nx.$api.login(value);
-    nx.$local.set('token', res.token);
+    const res = (await mutateAsync(value)) as any;
+    nx.$local.set('token', res?.token);
     nx.navigate('/admin');
-    setLoading(false);
   };
 
   return (
@@ -31,8 +29,8 @@ export default () => {
       />
       <FormBuilder {...opts} onFinish={handleFinish}>
         <Button
-          loading={loading}
-          disabled={loading}
+          loading={isLoading}
+          disabled={isLoading}
           className="w-full mb-4"
           htmlType="submit"
           size="large"

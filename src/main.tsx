@@ -2,9 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import zhCN from 'antd/locale/zh_CN';
 import { ConfigProvider } from 'antd';
-
 import '@/statics/styles/index.scss';
-import '@/statics/styles/app.scss';
 import App from '@/app';
 import '@/shared/bootstrap';
 import Provider from '@/shared/providers';

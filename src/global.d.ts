@@ -10,6 +10,7 @@ interface NxStatic {
   $api: any;
   $local: any;
   $event: any;
+  $client: any;
   navigate: NavigateFunction;
   LocalStorage: any;
 }
