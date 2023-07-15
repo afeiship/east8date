@@ -5,10 +5,10 @@ import zhCN from 'antd/locale/zh_CN';
 import { ConfigProvider } from 'antd';
 import App from '@/app';
 import Provider from '@/shared/providers';
-import stores from '@/shared/stores';
 import VitePwaPromotion from '@jswork/vite-pwa-promotion';
 import '@/assets/styles/index.scss';
 import '@/shared/bootstrap';
+import stores from '@/shared/stores';
 
 const element = document.getElementById('root') as HTMLElement;
 const root = ReactDOM.createRoot(element);

@@ -9,9 +9,9 @@ import { getActiveKeys } from '@/shared/helpers';
 
 const { Content, Sider } = Layout;
 
-export default (() => {
+export default () => {
   const navigate = useNavigate();
-  const { collapsed } = nx.$get('layout');
+  const { collapsed } = nx.$use('layout');
   const pathname = location.hash.slice(1);
   const activeKeys = getActiveKeys(pathname);
 
@@ -21,7 +21,8 @@ export default (() => {
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => {
-          nx.$root.layout.syncLocal('collapsed', value);
+          console.log('value: ', value);
+          nx.$set('layout.collapsed', value);
         }}>
         <Logo />
         <Menu
@@ -55,4 +56,4 @@ export default (() => {
       </Layout>
     </Layout>
   );
-});
+};

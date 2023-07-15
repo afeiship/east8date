@@ -2005,10 +2005,10 @@
     "@jswork/noop" "^1.0.0"
     classnames "^2.2.6"
 
-"@jswork/react-tiny-state@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@jswork/react-tiny-state/-/react-tiny-state-1.0.2.tgz#8c083a5398b54d79be1ed16f595fffcc02ad81a1"
-  integrity sha512-PLsY0X25Jt3bQsK7hIizeWNLIJaUHa5mTecK4Jn358cwdHoPK6m/Q258W+lTf/Bd9gYTAl1UB9R2MLiLeUWfxA==
+"@jswork/react-tiny-state@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@jswork/react-tiny-state/-/react-tiny-state-1.0.5.tgz#b41210e62230b36b64741f149bf21beef7682f7d"
+  integrity sha512-CEbHL8HaLq1sI5p+MFS3C8l/ddanFwSh/NUA8oKyaW3AWK7qKSuKhSuh+XkK/UPLz1trbpZ/Ximymj3uKOpRQA==
   dependencies:
     "@jswork/event-mitt" "^1.0.4"
     "@jswork/next-camelize" "^1.0.3"

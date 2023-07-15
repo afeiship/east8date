@@ -1,6 +1,6 @@
 export default nx.$defineStore('auth', {
   state: {
-    session: null
+    session: nx.$local.get('session')
   },
   watch: {
     session: (newValue) => {

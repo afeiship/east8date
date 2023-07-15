@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 export const Logo = () => {
-  const { collapsed } = nx.$get('layout');
+  const { collapsed } = nx.$use('layout');
 
   return (
     <Container className="logo flex justify-center py-3">

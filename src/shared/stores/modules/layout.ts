@@ -1,10 +1,10 @@
 export default nx.$defineStore('auth', {
   state: {
-    collapsed: null
+    collapsed: nx.$local.get('collapsed')
   },
   watch: {
     collapsed(newValue) {
-      console.log('newValue: ', newValue);
+      nx.$local.set('collapsed', newValue);
     }
   }
 });
