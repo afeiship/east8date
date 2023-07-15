@@ -1,6 +1,5 @@
 import { Button, Layout, Menu, Row, Space } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { obs } from '@jswork/react-mobxer';
 import { Logo } from '@/shared/components/logo';
 import { Footer } from '@/shared/components/footer';
 import { GLOBAL_MENUS } from '@/shared/constants';
@@ -10,7 +9,7 @@ import { getActiveKeys } from '@/shared/helpers';
 
 const { Content, Sider } = Layout;
 
-export default obs(() => {
+export default (() => {
   const navigate = useNavigate();
   const { collapsed } = nx.$get('layout');
   const pathname = location.hash.slice(1);

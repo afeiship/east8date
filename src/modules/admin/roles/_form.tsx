@@ -1,6 +1,5 @@
 import { BaseForm } from '@/shared/base/base-form';
 import { withRouter } from '@/shared/base/with-router';
-import { obs } from '@jswork/react-mobxer';
 import { FORM_LAYOUT } from '@/shared/constants';
 
 class Form extends BaseForm {
@@ -29,4 +28,4 @@ class Form extends BaseForm {
   };
 }
 
-export default obs(withRouter(Form as any));
+export default withRouter(Form as any);

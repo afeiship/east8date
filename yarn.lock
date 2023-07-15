@@ -2005,17 +2005,6 @@
     "@jswork/noop" "^1.0.0"
     classnames "^2.2.6"
 
-"@jswork/react-mobxer@^1.0.17":
-  version "1.0.17"
-  resolved "https://registry.npmmirror.com/@jswork/react-mobxer/-/react-mobxer-1.0.17.tgz#95010b2e062f7881da1c125e3871f5608b317dcc"
-  integrity sha512-MKUdJYdYqaKOkAsZtb1dPAWQHdnBJWaWVcNaGHi+vJMvkugGMl46BDvDWzHMtdTPoyq1t6okVJtc8ybcwsvQHA==
-  dependencies:
-    "@jswork/noop" "^1.0.0"
-    camelcase "6"
-    classnames "^2.2.6"
-    mobx "^6.6.1"
-    mobx-react "^7.5.2"
-
 "@jswork/react-tiny-state@^1.0.2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/@jswork/react-tiny-state/-/react-tiny-state-1.0.2.tgz#8c083a5398b54d79be1ed16f595fffcc02ad81a1"
@@ -2796,11 +2785,6 @@ camelcase-css@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/camelcase-css/-/camelcase-css-2.0.1.tgz#ee978f6947914cc30c6b44741b6ed1df7f043fd5"
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
-
-camelcase@6:
-  version "6.3.0"
-  resolved "https://registry.npmmirror.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
-  integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 camelize@^1.0.0:
   version "1.0.1"
@@ -4262,23 +4246,6 @@ minimist@^1.2.6:
   version "1.2.7"
   resolved "https://registry.npmmirror.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
-
-mobx-react-lite@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.npmmirror.com/mobx-react-lite/-/mobx-react-lite-3.4.0.tgz#d59156a96889cdadad751e5e4dab95f28926dfff"
-  integrity sha512-bRuZp3C0itgLKHu/VNxi66DN/XVkQG7xtoBVWxpvC5FhAqbOCP21+nPhULjnzEqd7xBMybp6KwytdUpZKEgpIQ==
-
-mobx-react@^7.5.2:
-  version "7.6.0"
-  resolved "https://registry.npmmirror.com/mobx-react/-/mobx-react-7.6.0.tgz#ebf0456728a9bd2e5c24fdcf9b36e285a222a7d6"
-  integrity sha512-+HQUNuh7AoQ9ZnU6c4rvbiVVl+wEkb9WqYsVDzGLng+Dqj1XntHu79PvEWKtSMoMj67vFp/ZPXcElosuJO8ckA==
-  dependencies:
-    mobx-react-lite "^3.4.0"
-
-mobx@^6.6.1:
-  version "6.7.0"
-  resolved "https://registry.npmmirror.com/mobx/-/mobx-6.7.0.tgz#2d805610fee1801fd015c54fd5400d2601aa3768"
-  integrity sha512-1kBLBdSNG2bA522HQdbsTvwAwYf9hq9FWxmlhX7wTsJUAI54907J+ozfGW+LoYUo06vjit748g6QH1AAGLNebw==
 
 mri@^1.1.5:
   version "1.2.0"
