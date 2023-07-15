@@ -21,7 +21,6 @@ export default () => {
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => {
-          console.log('value: ', value);
           nx.$set('layout.collapsed', value);
         }}>
         <Logo />
