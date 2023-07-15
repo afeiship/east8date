@@ -43,6 +43,13 @@ export default {
         params_create: ['post', '/ads/param/add'],
         params_update: ['post', '/ads/param/edit']
       }
+    },
+    {
+      request: ['/api', 'multipart'],
+      items: {
+        // system
+        sys_upload: ['post', '/common/oss/upload']
+      }
     }
   ]
 };
