@@ -20,7 +20,8 @@ export default () => {
     const { value } = e.target;
     const res = await mutateAsync(value);
     // nx.$local.set('session', res);
-    nx.$root.auth.session = res;
+    // nx.$root.auth.session = res;
+    nx.$set('auth.session', res);
     nx.navigate('/admin');
   };
 

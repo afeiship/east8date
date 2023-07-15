@@ -12,7 +12,7 @@ const { Content, Sider } = Layout;
 
 export default obs(() => {
   const navigate = useNavigate();
-  const { collapsed } = nx.$root.layout;
+  const { collapsed } = nx.$get('layout');
   const pathname = location.hash.slice(1);
   const activeKeys = getActiveKeys(pathname);
 
@@ -39,7 +39,8 @@ export default obs(() => {
           <Space>
             <ReactAntConfirm
               onClick={() => {
-                nx.$root.auth.session = null;
+                // nx.$root.auth.session = null;
+                nx.$set('auth.session', nx.NIL);
                 navigate('/');
               }}>
               <Button size="small" icon={<span className="mr-1">🎱</span>}>
