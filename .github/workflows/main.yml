@@ -1,0 +1,17 @@
+name: moban-admin workflow for AliyunOSS
+on: [push]
+jobs:
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    env:
+      ACCESS_KEY_ID: ${{ secrets.ALIBABACLOUD_ACCESS_KEY_ID }}
+      ACCESS_KEY_SECRET: ${{ secrets.ALIBABACLOUD_ACCESS_KEY_SECRET }}
+      REGION: ${{ secrets.ALIBABACLOUD_REGION_ID }}
+    if: contains(github.event.head_commit.message, '__@production__')
+    steps:
+      - name: All in one
+        uses: afeiship/action-deploy2aliyun@1.0.1
+        with:
+          build_dist: 'dist'
+          oss_bucket: 'oss://kubebio-com-web/kubebio.com/assets/db3a7eb4ed0f8d8e12be7f635ee7a768/'
