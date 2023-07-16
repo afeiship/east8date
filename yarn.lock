@@ -1970,10 +1970,10 @@
     prismjs "^1.25.0"
     tslib "^2.5.0"
 
-"@jswork/react-full-image@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npmmirror.com/@jswork/react-full-image/-/react-full-image-1.0.5.tgz#109fb13f03cee5f3955d3e35bad78fa784de9826"
-  integrity sha512-2E+5ofOs/1P2/YcbRMNX0wklTgl/4zhs/cQ2GIss/zI5018iJd8k76mi/+X7H87DmyEV7kpAxZ6A8ud6oDfITQ==
+"@jswork/react-full-image@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/@jswork/react-full-image/-/react-full-image-1.0.6.tgz#ae34fb8ae17a4e681cafa6c1edac357065f76d9b"
+  integrity sha512-E5Ew6tKZBIyKHa+bD9fBJv+xn/vApnLOUgJpevmRrVWc4rc9jcsyNPKosB3bM9XE1wva747Sht+uE4tkCl4N5Q==
   dependencies:
     "@jswork/noop" "^1.0.0"
     classnames "^2.2.6"
@@ -2005,10 +2005,10 @@
     "@jswork/noop" "^1.0.0"
     classnames "^2.2.6"
 
-"@jswork/react-tiny-state@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@jswork/react-tiny-state/-/react-tiny-state-1.0.5.tgz#b41210e62230b36b64741f149bf21beef7682f7d"
-  integrity sha512-CEbHL8HaLq1sI5p+MFS3C8l/ddanFwSh/NUA8oKyaW3AWK7qKSuKhSuh+XkK/UPLz1trbpZ/Ximymj3uKOpRQA==
+"@jswork/react-tiny-state@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/@jswork/react-tiny-state/-/react-tiny-state-1.0.6.tgz#922e1f773965156ee8c9dd4e3a7470e3373cc67b"
+  integrity sha512-f0zAshMkutcO8mjGDZtdiJgpDTKI1M7iVHkHcZb7b5hM1fv1oVOuitJ8CoKZF4ELIWK5sFKKASorJdvAxMYN4w==
   dependencies:
     "@jswork/event-mitt" "^1.0.4"
     "@jswork/next-camelize" "^1.0.3"
