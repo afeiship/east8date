@@ -2021,12 +2021,11 @@
     "@jswork/noop" "^1.0.0"
     classnames "^2.2.6"
 
-"@jswork/react-tiny-state@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmmirror.com/@jswork/react-tiny-state/-/react-tiny-state-1.0.6.tgz#922e1f773965156ee8c9dd4e3a7470e3373cc67b"
-  integrity sha512-f0zAshMkutcO8mjGDZtdiJgpDTKI1M7iVHkHcZb7b5hM1fv1oVOuitJ8CoKZF4ELIWK5sFKKASorJdvAxMYN4w==
+"@jswork/react-tiny-state@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@jswork/react-tiny-state/-/react-tiny-state-1.0.7.tgz#d4869a071e2f1fb4fcab54cedaceedbf95cbe534"
+  integrity sha512-ElvAgnjbVE4OVMMpQ5Tm5wWy4b4JftTRvV0j1CqZMz3vYroKBDNvINDjSsI45lzjrPT5wXfXUn5gQE3KAD3xVw==
   dependencies:
-    "@jswork/event-mitt" "^1.0.4"
     "@jswork/next-camelize" "^1.0.3"
     "@jswork/next-invoke" "^1.0.1"
     "@jswork/next-slice2str" "^1.0.5"

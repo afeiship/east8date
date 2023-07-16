@@ -24,7 +24,7 @@
     "@jswork/react-full-image": "^1.0.6",
     "@jswork/react-interactive-list": "^1.2.3",
     "@jswork/react-kbar": "^1.0.3",
-    "@jswork/react-tiny-state": "^1.0.6",
+    "@jswork/react-tiny-state": "^1.0.7",
     "@jswork/routerx": "^1.0.1",
     "@jswork/vite-pwa-promotion": "^1.0.9",
     "@jswork/vite-require-context": "^1.0.3",
