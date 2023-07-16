@@ -82,3 +82,30 @@ export const toImg = (inPid, inSize?) => {
   const size = inSize || 'large';
   return `${IMG_BASE_URL}/${size}/${inPid}.jpg`;
 };
+
+export const KB_ACTIONS = [
+  {
+    id: 'users',
+    icon: '📕',
+    section: '用户管理',
+    name: '01/用户管理',
+    subtitle: '关键词: users',
+    shortcut: ['u'],
+    keywords: 'users',
+    perform: () => {
+      nx.navigate('/admin/users');
+    }
+  },
+  {
+    id: 'params',
+    icon: '🤖',
+    section: '参数管理',
+    name: '02/参数管理',
+    subtitle: '关键词: params',
+    shortcut: ['p'],
+    keywords: 'params',
+    perform: () => {
+      nx.navigate('/admin/params');
+    }
+  }
+];
