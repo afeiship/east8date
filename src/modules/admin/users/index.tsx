@@ -17,7 +17,7 @@ export default class extends BaseList {
   }
 
   renderAvatar(_, record) {
-    const url = toImg(record.avatar, 'small');
+    const url = toImg(record.avatar);
     return <Avatar src={url} size="large" />;
   }
 }
