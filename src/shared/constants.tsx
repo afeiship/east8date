@@ -5,7 +5,7 @@ import { MenuProps } from 'antd';
 type MenuItem = Required<MenuProps>['items'][number];
 
 const UPLOAD_ACTION = 'https://admin.moban.work/weibo_api/interface/pic_upload.php';
-const IMG_BASE_URL = 'https://tva1.js.work';
+const IMG_BASE_URL = 'http://103.96.148.144:9081/api/static';
 export const FORM_LAYOUT = [3, 21];
 export const ID_NAME_PAIRS = { id: 'value', name: 'label' };
 export const KV_NAME_PAIRS = { value: 'id', label: 'name' };
@@ -41,7 +41,22 @@ export const GLOBAL_FORM_PRESETS = {
     },
     avatar: {
       label: '头像',
-      widget: 'ac:upload-picture'
+      widget: 'ac:upload-picture',
+      widgetProps: {
+        transformResponse: (v) => v[0],
+        transformURL: (pid) => `http://103.96.148.144:9081/api/static/${pid}`,
+        customRequest: async (option) => {
+          const [err, res] = await nx.to(
+            nx.$api.sys_upload({
+              file: option.file,
+              actionName: 'sys-admin-users-add'
+            })
+          );
+          console.log('pid: ', res);
+          option.onSuccess(res, option.file);
+          option.onError(err, option.file);
+        }
+      }
     },
     username: {
       label: '用户名',
@@ -78,9 +93,8 @@ export const GLOBAL_FORM_PRESETS = {
   }
 };
 
-export const toImg = (inPid, inSize?) => {
-  const size = inSize || 'large';
-  return `${IMG_BASE_URL}/${size}/${inPid}.jpg`;
+export const toImg = (inPid) => {
+  return `${IMG_BASE_URL}/${inPid}`;
 };
 
 export const KB_ACTIONS = [

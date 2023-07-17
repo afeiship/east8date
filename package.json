@@ -11,12 +11,12 @@
     "routerx": "routerx-cli"
   },
   "dependencies": {
-    "@jswork/antd-components": "^1.0.48",
+    "@jswork/antd-components": "^1.0.49",
     "@jswork/http-schema": "^2.1.6",
     "@jswork/jzyunqi-interceptors": "^1.0.9",
     "@jswork/next": "^1.1.11",
     "@jswork/next-admin-kits": "^1.0.19",
-    "@jswork/next-axios": "^1.2.37",
+    "@jswork/next-axios": "^1.2.38",
     "@jswork/react-ant-abstract-curd": "^2.0.8",
     "@jswork/react-ant-abstract-form": "^1.2.59",
     "@jswork/react-breadcrumb": "^1.0.4",

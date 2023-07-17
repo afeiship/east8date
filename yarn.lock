@@ -1499,10 +1499,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@jswork/antd-components@^1.0.48":
-  version "1.0.48"
-  resolved "https://registry.npmjs.org/@jswork/antd-components/-/antd-components-1.0.48.tgz#2cef3e7f7928e86f02ee37d15e751b4742efe023"
-  integrity sha512-CX5v+8PLqELgEjROYhHJs8b6EvT0aSkZCMwLKmfa+5kx+IN2OMO4+sYxOJGckqbcCZmH/kc5CQDszCuyFL7LlQ==
+"@jswork/antd-components@^1.0.49":
+  version "1.0.49"
+  resolved "https://registry.npmjs.org/@jswork/antd-components/-/antd-components-1.0.49.tgz#c41efe2b2a411baa7bea772c1e10bd96c51ca942"
+  integrity sha512-y+CqSuMmApgBtdHJiHpS+uCQxzczucNC7iyc5ygbyrkM8vFQGi5fS1sZOVbc2tiKlh2OvB86brOgrjJr6qbYow==
   dependencies:
     "@jswork/antd-form-builder" "^1.1.18"
     "@jswork/antd-tpls" "^1.0.15"
@@ -1611,13 +1611,13 @@
   resolved "https://registry.npmmirror.com/@jswork/loadkit/-/loadkit-1.0.6.tgz#0e384a650088abf2df5eab29e5a04de627764301"
   integrity sha512-ggR1wjzB1bb/bPphCQiRej7W/MmULEdtEVM//fFityvX+3yQV8CNuyAHzukGmbkgP5zIQOU56mbBfrtHqtM5rw==
 
-"@jswork/next-abstract-request@^1.0.50":
-  version "1.0.50"
-  resolved "https://registry.npmmirror.com/@jswork/next-abstract-request/-/next-abstract-request-1.0.50.tgz#3a5075487076dca3b512ee5d43a149a1a1257198"
-  integrity sha512-wDy7NZJatijQw3xJl/V6XRT+1crJGDmbrwKe/n41PJsKO0SFSZeLZcpNqHq0ea3CiMuRgAt3IEQVe+9tZAnnXg==
+"@jswork/next-abstract-request@^1.0.51":
+  version "1.0.51"
+  resolved "https://registry.npmjs.org/@jswork/next-abstract-request/-/next-abstract-request-1.0.51.tgz#6ea5f339c354ebb8fcf6161e8729f57022d8bee7"
+  integrity sha512-WzxUtSp6LEPT6d81wukQmSBiBjWDL7KAyvkvSokMwgqXGvJwjniDtpCVFpbwAJWGWFEAxMYj/VhYxW1wLAQauA==
   dependencies:
     "@jswork/next-content-type" "^1.0.10"
-    "@jswork/next-data-transform" "^1.0.19"
+    "@jswork/next-data-transform" "^1.0.20"
     "@jswork/next-interceptor" "^1.1.2"
     "@jswork/next-parse-request-args" "^1.0.8"
     "@jswork/next-stub-singleton" "^1.0.7"
@@ -1663,12 +1663,12 @@
   resolved "https://registry.npmmirror.com/@jswork/next-ant-column/-/next-ant-column-1.0.5.tgz#1ba39355f84320d6d783bcd68a69d04aaf79c0d4"
   integrity sha512-9VHsVVq7Tm5lmqw38eHqwSVg2L7Dgrwzfsg47Wt8/49hulmmh5avGByCzLZJzyK5pq3meNXTMC0Au8ZROIK41g==
 
-"@jswork/next-axios@^1.2.37":
-  version "1.2.37"
-  resolved "https://registry.npmmirror.com/@jswork/next-axios/-/next-axios-1.2.37.tgz#249e78824aa4dbafd74540a2111668cb92e94068"
-  integrity sha512-+P3DIVb5YKtdWMxQQFVXd6qbR3lbD9Li7mYzLWiFhP5oBDWtfrtpDSt/LWSG9LrW4Sh2L0b4Mc9XhXqfrzAZYA==
+"@jswork/next-axios@^1.2.38":
+  version "1.2.38"
+  resolved "https://registry.npmjs.org/@jswork/next-axios/-/next-axios-1.2.38.tgz#e42f1898b1cea7abe9ab5cde156cb87b2e5d7bc7"
+  integrity sha512-eNB+Y9kX/LH6bwa618Zpc6nkA5e7O5AoYjBbfxfDf2m2lTUOjXGPwxeOYudbcGw0tt/Wd5yAzQmBcWvQOSDbSA==
   dependencies:
-    "@jswork/next-abstract-request" "^1.0.50"
+    "@jswork/next-abstract-request" "^1.0.51"
 
 "@jswork/next-camelize@^1.0.3":
   version "1.0.3"
@@ -1695,10 +1695,10 @@
   resolved "https://registry.npmmirror.com/@jswork/next-content-type/-/next-content-type-1.0.10.tgz#bfc95493ba488e61261b5af1bf667339b69a6b30"
   integrity sha512-hu3bvI7ev9kX758SMdKnMFhgM/REGeYuG4UPcLMXEH5uI1bvPrNN1Xj+uSU70+G6u409uohKjIWmHnZ4w8BryA==
 
-"@jswork/next-data-transform@^1.0.19":
-  version "1.0.19"
-  resolved "https://registry.npmmirror.com/@jswork/next-data-transform/-/next-data-transform-1.0.19.tgz#c569181d09a355954ef59327965e674014dfc1b0"
-  integrity sha512-KEJE/x/gUM9y2tVSGQLSQOkxdPmELNLgIsRSjfJuVPoGtwffQ1iKII27uwtr+yuBPAkMHTeUylUiDKP2Z/mN7A==
+"@jswork/next-data-transform@^1.0.20":
+  version "1.0.20"
+  resolved "https://registry.npmjs.org/@jswork/next-data-transform/-/next-data-transform-1.0.20.tgz#747fe6ec224e5838c3c5e2f8d23c0ccd865925c9"
+  integrity sha512-RC/0y1+T+LCQm0I5LnnIG/CXXMxb/AvI2uGgWEv7AXB3CfNw3QcCm1S46f6a5hONRm/mWb2ygvNHAXHaNmROCw==
   dependencies:
     "@jswork/next-param" "^1.0.12"
 
