@@ -1,4 +1,5 @@
-export default nx.$defineStore('auth', {
+export default nx.$defineStore({
+  name: 'auth',
   state: {
     session: nx.$local.get('session')
   },

@@ -1,4 +1,5 @@
-export default nx.$defineStore('layout', {
+export default nx.$defineStore({
+  name: 'layout',
   state: {
     collapsed: nx.$local.get('collapsed')
   },
