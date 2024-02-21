@@ -1,4 +1,6 @@
 import '@jswork/next-admin-kits';
+import '@jswork/vite-envs';
+
 import * as AcComponents from '@jswork/antd-components';
 import { QueryClient } from '@tanstack/react-query';
 import { installWidgets } from '@jswork/antd-form-builder';

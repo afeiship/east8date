@@ -1560,6 +1560,14 @@
   resolved "https://registry.npmmirror.com/@jswork/class-imperative-handle/-/class-imperative-handle-1.0.1.tgz#858314d14782260e9697747b8aadebe7515eab4c"
   integrity sha512-Wqc5I+EWgC2OPeStj91vVzQlBVRgrnMzZsrC4+OemTnLcnV56Og7oeupubRupTGtJNIPDO47+InbpuLMvAlcoA==
 
+"@jswork/env-manager@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.npmmirror.com/@jswork/env-manager/-/env-manager-1.0.13.tgz#b5f03f23972af362fc27a899e5541d0063f721a5"
+  integrity sha512-/Xw+sCOBW8wZg4XYIdXlxlxFounZsfXY4mTm+pEk6JO2DNMZbvoG71LgxlQuhbbJ0+ZiV2K4AefyYVs3JdgU1w==
+  dependencies:
+    "@jswork/next-deep-clone" "^1.0.3"
+    "@jswork/next-json" "^1.0.5"
+
 "@jswork/event-mitt@^1.0.4":
   version "1.0.4"
   resolved "https://registry.npmmirror.com/@jswork/event-mitt/-/event-mitt-1.0.4.tgz#3331662c0cda41d1d8426fa8bc9c33ea9ea9c72b"
@@ -1792,7 +1800,7 @@
   resolved "https://registry.npmmirror.com/@jswork/next-is-plain-object/-/next-is-plain-object-1.0.4.tgz#3980c6b5909cf609359132616c2ae53981bec3f3"
   integrity sha512-UCVyZlsdwsXEiG8youWogMUIiibhG8IGVefvdmKvpQXVkJAIOUD1YUwWtErKDZyz0NdK6JuA0qxZmW64eQUzvA==
 
-"@jswork/next-json@^1.0.6":
+"@jswork/next-json@^1.0.5", "@jswork/next-json@^1.0.6":
   version "1.0.6"
   resolved "https://registry.npmmirror.com/@jswork/next-json/-/next-json-1.0.6.tgz#2dbb6c514fbc19eb361d3ba31af5117ee3a19e77"
   integrity sha512-c/hON/cviCciP9RpnpgTCUZN3Z6YG+haJk0cFnu56h4FaOF8XTTzh2Rqu3C2itCxdA/JfwiEex4u2N6F7V+PWA==
@@ -2039,6 +2047,18 @@
   version "1.0.1"
   resolved "https://registry.npmjs.org/@jswork/str2kv/-/str2kv-1.0.1.tgz#f9fdf9c43200a929697dde36a7d75b74479e9bdc"
   integrity sha512-e2EZ7T9UxIQWTr2E9LexEKHIjKvVGMr0taW9fWyhpeD4AJhGupuVaBFOO1r2R2Z86uU+gJ4CJSqUep9zJLa7cA==
+
+"@jswork/vite-envs@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.npmmirror.com/@jswork/vite-envs/-/vite-envs-1.0.13.tgz#12bfe853c0f089cbddea69f355f950c72cf4cac5"
+  integrity sha512-ekxAm3ZPr0V2r5QEBReskPTcONdCHtN6u+WqWzFO9Xfe2/2G/AxhiCAjshTWELOCZpqTl1fDNLXydVmjsaDWZg==
+  dependencies:
+    "@jswork/env-manager" "^1.0.13"
+
+"@jswork/vite-plugin-environment@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/@jswork/vite-plugin-environment/-/vite-plugin-environment-1.0.3.tgz#917849155932c2987178de5a7564c675a5457d14"
+  integrity sha512-zJzg648f71peFJrAJxnJ0USkbb4oR+RDfDPrLolFP/Ww/yUityT6DUCKz+FkkUa8tmre0HY/0bPtnRI1IDVcGg==
 
 "@jswork/vite-plugin-html-banner@^1.0.3":
   version "1.0.3"

@@ -3,12 +3,15 @@ import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
 import { VitePWA } from 'vite-plugin-pwa';
+import environmentPlugin from '@jswork/vite-plugin-environment';
 import banner from '@jswork/vite-plugin-html-banner';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envDir: 'config/environments',
   plugins: [
     react(),
+    environmentPlugin({ prefix: 'VITE_' }),
     banner(),
     VitePWA({
       workbox: {
