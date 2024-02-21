@@ -5,8 +5,9 @@ import schema from './schema';
 
 const options = {
   adapter: 'Axios',
+  harmony: true,
   interceptors,
   transformResponse: (res) => nx.get(res, 'data.data')
 };
 
-nx.$api = httpSchema(schema, options);
+httpSchema(schema, options);
