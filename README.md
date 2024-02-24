@@ -13,9 +13,13 @@ npm install @jswork/east8date
 
 ## usage
 ```js
-import east8date from '@jswork/east8date';
+import sdf from '@jswork/simple-date-format';
+import es8 from '@jswork/east8date';
 
-const d = east8date();
+const res = sdf('datetime', es8());
+console.log(res);
+
+// 2024-02-24 10:06:51
 ```
 
 ## types
