@@ -1,6 +1,6 @@
 {
   "name": "@jswork/east8date",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get east +8 timezone date object.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -31,5 +31,12 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "keywords": [
+    "asia",
+    "date",
+    "shanghai",
+    "standard",
+    "timezone"
+  ]
 }
